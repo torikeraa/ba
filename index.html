@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カウンタと判定</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #number {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+        button {
+            font-size: 1em;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>バ</h1>
+    <div id="number">0</div>
+    <button id="addButton">追加</button>
+    <button id="judgeButton">判定</button>
+    <div id="result"></div>
+
+    <script>
+        let number = 0;
+
+        const numberDisplay = document.getElementById('number');
+        const resultDisplay = document.getElementById('result');
+
+        document.getElementById('addButton').addEventListener('click', () => {
+            number++;
+            numberDisplay.textContent = number;
+        });
+
+        document.getElementById('judgeButton').addEventListener('click', () => {
+            let message = '';
+            if (number === 1) {
+                message = 'あたり';
+            } else if (number === 2) {
+                message = 'おおあたり';
+            } else if (number === 10) {
+                message = 'はずれ';
+            } else {
+                message = 'おおはずれ';
+            }
+            resultDisplay.textContent = message;
+            number = 0;
+            numberDisplay.textContent = number;
+        });
+    </script>
+</body>
+</html>
