@@ -48,13 +48,18 @@
         document.getElementById('judgeButton').addEventListener('click', () => {
             let message = '';
             if (number === 1) {
-                message = 'あたり';
-            } else if (number === 2) {
-                message = 'おおあたり';
-            } else if (number === 10) {
-                message = 'はずれ';
+                message = 'あたり：おおあたりがロケで行ってそう';
+            } else if (number === 3) {
+                message = 'あたり：おおあたりが踊ったことありそう';
+            } else if (number === 4) {
+                message = 'あたり：おおあたりのメンバーじゃなくてモグライダーのメンバー';
+            } else if (number === 7) {
+                message = 'あたり：答えの由来になった蔑称';
+            }
+            else if (number === 70000) {
+                message = 'おおあたり：クリアです';
             } else {
-                message = 'おおはずれ';
+                message = 'はずれ';
             }
             resultDisplay.textContent = message;
             number = 0;
